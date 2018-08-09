@@ -24,4 +24,8 @@ public class MovieService {
 	public List<Movie> getAllMovies() {
 		return movies;
 	}
+	
+	public Movie getMovie(String id) {
+		return movies.stream().filter(m -> m.getId().equals(id)).findFirst().get();
+	}
 }
