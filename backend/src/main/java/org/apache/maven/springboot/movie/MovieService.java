@@ -1,5 +1,6 @@
 package org.apache.maven.springboot.movie;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MovieService {
 	
-	private List<Movie> movies = Arrays.asList(
+	private List<Movie> movies = new ArrayList<>(Arrays.asList(
 			new Movie("1", "Avengers: Infinity Wars", "2018"),
 			new Movie("2", "Rogue One: A Star Wars Story", "2016"),
 			new Movie("3", "Men in Black", "1997"),
@@ -19,7 +20,7 @@ public class MovieService {
 			new Movie("8", "Inception", "2010"),
 			new Movie("9", "Frozen", "2013"),
 			new Movie("10", "Inside Out", "2015")
-			);
+			));
 	
 	public List<Movie> getAllMovies() {
 		return movies;
@@ -27,5 +28,9 @@ public class MovieService {
 	
 	public Movie getMovie(String id) {
 		return movies.stream().filter(m -> m.getId().equals(id)).findFirst().get();
+	}
+
+	public void addMovie(Movie movie) {
+		movies.add(movie);
 	}
 }
