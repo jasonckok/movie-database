@@ -1,13 +1,13 @@
 # Movie Database
 
-A Spring based Maven application that provides RESTful web services as the backend.
-This is an ongoing project.
+A Spring based Maven application that provides RESTful web services as the backend. This is an ongoing project.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Note that there are two branches; ```dev``` and ```master```. The default branch is ```dev```.
 
 ```dev``` branch is specifically used for development and testing. Some features may branch off from here.
+
 ```master``` branch is stable/final release production.
 
 ### Installing
