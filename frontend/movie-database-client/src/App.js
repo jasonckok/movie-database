@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div>
         <h1 className='heading'>Welcome to Movie Database</h1>
-        <MovieList movies={this.state.movies} />
+        <MovieList movies={this.state.movies} />        
       </div>
      
     );
