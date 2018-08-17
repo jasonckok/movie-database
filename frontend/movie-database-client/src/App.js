@@ -7,27 +7,39 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      error: null,
+      isLoaded: false,
       movies: [],
-    };
-    this.init();
+    };    
   }
   
-  init() {
+  componentDidMount() {
     MovieService.getAllMovies()
-      .then(response => {
+      .then(
+        (response) => {
         this.setState({
+          isLoaded: true,
           movies: response,
         });
+      },
+      (error) => {
+        this.setState({isLoaded: true, error});
       });
   }
 
   render() {    
+    const { error, isLoaded, movies } = this.state;
+    
+    if(error) {
+      return <div>Error: {error.message}</div>
+    } else if(!isLoaded) {
+      return <div>Loading...</div>
+    }
     return (
       <div>
         <h1 className='heading'>Welcome to Movie Database</h1>
-        <MovieList movies={this.state.movies} />        
-      </div>
-     
+        <MovieList movies={movies} />        
+      </div>     
     );
   }
 }

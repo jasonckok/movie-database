@@ -6,7 +6,7 @@ const MovieService = {
             .then((response) => {
                 //console.log(response);
                 return response.data;
-            }).catch(error => console.error(error));
+            });
     },
     getMovie: (id) => {
         return axios.get(`movies/${id}`)
