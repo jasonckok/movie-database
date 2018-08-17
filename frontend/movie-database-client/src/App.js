@@ -3,6 +3,7 @@ import './App.css';
 
 import MovieService from './services/movie-service';
 import MovieTable from './components/table/movie-table';
+import MovieForm from './components/movie-form/movie-form';
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +12,9 @@ class App extends Component {
       error: null,
       isLoaded: false,
       movies: [],
-    };    
+    };   
+    
+    this.handleMovieForm = this.handleMovieForm.bind(this);
   }
   
   componentDidMount() {
@@ -28,6 +31,10 @@ class App extends Component {
       });
   }
 
+  handleMovieForm(movie) {
+    console.log(movie);
+  }
+
   render() {    
     const { error, isLoaded, movies } = this.state;
     
@@ -38,9 +45,12 @@ class App extends Component {
     }
     return (
       <div className="container">
-        <h1 className='heading'>Welcome to Movie Database</h1>
-        {/*<MovieList movies={movies} />*/}
-        <MovieTable movies={movies}/>    
+        <h1 className="jumbotron text-center text-primary">Welcome to Movie Database</h1>
+        <section className="row">
+          <MovieTable movies={movies}/>
+          <MovieForm onMovieFormSubmit={this.handleMovieForm}/>
+        </section>   
+         
       </div>     
     );
   }
