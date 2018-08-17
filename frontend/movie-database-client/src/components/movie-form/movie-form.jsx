@@ -44,7 +44,7 @@ export default class MovieForm extends React.Component {
                     <div className="form-group">
                         <label htmlFor="year" className="col-lg-3 control-label">Realease Year</label>
                         <div className="col-lg-10">
-                            <input type="text" 
+                            <input type="date" 
                                 className="form-control" 
                                 name="year"
                                 value={this.state.year}

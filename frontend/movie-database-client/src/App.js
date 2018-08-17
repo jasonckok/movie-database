@@ -15,9 +15,14 @@ class App extends Component {
     };   
     
     this.handleMovieForm = this.handleMovieForm.bind(this);
+    this.loadMovies = this.loadMovies.bind(this);
   }
   
   componentDidMount() {
+    this.loadMovies();
+  }
+
+  loadMovies() {
     MovieService.getAllMovies()
       .then(
         (response) => {
@@ -32,7 +37,15 @@ class App extends Component {
   }
 
   handleMovieForm(movie) {
-    console.log(movie);
+    MovieService.createMovie(movie)
+      .then(
+        () => {          
+          this.loadMovies();
+        },
+        (error) => {
+          this.setState({isLoaded: true, error});
+        }
+      );
   }
 
   render() {    
