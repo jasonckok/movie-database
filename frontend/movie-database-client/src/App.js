@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MovieList from './components/movie-list/Movie-list';
 import './App.css';
 
 import MovieService from './services/movie-service';
@@ -40,7 +39,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1 className='heading'>Welcome to Movie Database</h1>
-        <MovieList movies={movies} />
+        {/*<MovieList movies={movies} />*/}
         <MovieTable movies={movies}/>    
       </div>     
     );
