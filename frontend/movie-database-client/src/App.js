@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import MovieList from './components/movie-list/Movie-list';
 import './App.css';
+
 import MovieService from './services/movie-service';
+import MovieTable from './components/table/movie-table';
 
 class App extends Component {
   constructor(props) {
@@ -31,14 +33,15 @@ class App extends Component {
     const { error, isLoaded, movies } = this.state;
     
     if(error) {
-      return <div>Error: {error.message}</div>
+      return <div className="alert alert-danger">Error: {error.message}</div>
     } else if(!isLoaded) {
       return <div>Loading...</div>
     }
     return (
-      <div>
+      <div className="container">
         <h1 className='heading'>Welcome to Movie Database</h1>
-        <MovieList movies={movies} />        
+        <MovieList movies={movies} />
+        <MovieTable movies={movies}/>    
       </div>     
     );
   }
