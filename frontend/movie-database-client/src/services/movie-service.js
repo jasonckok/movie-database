@@ -13,6 +13,12 @@ const MovieService = {
             .then(response => {
                 return response.data;
             }).catch(error => console.error(error));
+    },
+    createMovie: (movie) => {
+        return axios.post('movies', movie)
+            .then(
+                (response) => response.data
+            );
     }
 };
 
