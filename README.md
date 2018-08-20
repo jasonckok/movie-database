@@ -4,11 +4,11 @@ A Spring based Maven application that provides RESTful web services as the backe
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Note that there are two branches; ```dev``` and ```master```. The default branch is ```dev```.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Note that there are two branches; ``dev`` and ``master``. The default branch is ``dev``.
 
-```dev``` branch is specifically used for development and testing. Some features may branch off from here.
+``dev`` branch is specifically used for development and testing. Some features may branch off from here.
 
-```master``` branch is stable/final release production.
+``master`` branch is stable/final release production.
 
 ### Installing
 
@@ -18,7 +18,7 @@ Clone the project
 $ git clone https://github.com/jasonckok/movie-database.git
 ```
 
-Open the project in your favorite editor (Netbeans, Eclipse, IntelliJ IDEA, etc) and run it. Note that it may take some time for maven to download the necessary ```jar``` files.
+Open the project in your favorite IDE (Netbeans, Eclipse, IntelliJ IDEA, etc) and run it. Note that it may take some time for maven to download the necessary ``jar`` files.
 
 ## REST API
 
@@ -26,15 +26,15 @@ A list of REST API endpoints available.
 
 ### GET
 
-To get the full list
+To get the full list:
 ```
 localhost:8080/movies
 ```
-To get a specific movie using ```id```
+To get a specific movie using ``id``:
 ```
 localhost:8080/movies/{id}
 ```
-where ```{id}``` is the id and the format is
+where ``{id}`` is the id and the format is:
 ```
 {
     "id": "1",
@@ -44,11 +44,11 @@ where ```{id}``` is the id and the format is
 ```
 
 ### POST
-To post a movie
+To post a movie:
 ```
 localhost:8080/movies/
 ```
-where the ``JSON`` format is
+where the ``JSON`` format is:
 ```
 {
     "id": "value",
@@ -56,6 +56,27 @@ where the ``JSON`` format is
     "year": "YYYY"
 }
 ```
+
+### PUT
+To update a movie:
+```
+localhost:8080/movies/{id}
+```
+where ``{id}`` is the id and the ``JSON`` format is:
+```
+{
+    "id": "value",
+    "name": "String",
+    "year": "YYYY"
+}
+```
+
+### DELETE
+To delete a movie:
+```
+localhost:8080/movies/{id}
+```
+where ``{id}`` is the id corresponding to the movie that you want to delete.
 
 ## Built With
 
