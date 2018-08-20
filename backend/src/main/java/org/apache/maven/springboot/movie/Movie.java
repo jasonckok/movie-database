@@ -6,9 +6,7 @@ public class Movie {
 	private String name;
 	private String year;
 	
-	public Movie() {
-		
-	}
+	public Movie() {}
 	
 	public Movie(String id, String name, String year) {
 		super();

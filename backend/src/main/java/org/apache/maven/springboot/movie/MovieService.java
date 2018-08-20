@@ -22,15 +22,35 @@ public class MovieService {
 			new Movie("10", "Inside Out", "2015")
 			));
 	
+	// Get all movies
 	public List<Movie> getAllMovies() {
 		return movies;
 	}
 	
+	// Get a movie
 	public Movie getMovie(String id) {
 		return movies.stream().filter(m -> m.getId().equals(id)).findFirst().get();
 	}
 
+	// Add a movie
 	public void addMovie(Movie movie) {
 		movies.add(movie);
+	}
+
+	// Update a movie
+	public void updateMovie(String id, Movie movie) {
+		for(int i = 0; i < movies.size(); i++) {
+			Movie m = movies.get(i);
+			if(m.getId().equals(id)) {
+				movies.set(i, movie);
+				return;
+			}
+		}
+		
+	}
+
+	// Delete a movie
+	public void deleteMovie(String id) {
+		movies.removeIf(m -> m.getId().equals(id));
 	}
 }
