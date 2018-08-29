@@ -1,6 +1,8 @@
 # Movie Database
 
-A Spring based Maven application that provides RESTful web services as the backend. This is an ongoing project.
+A Spring based Maven application that serves as the backend to provide RESTful web services by [Jason Kok](https://github.com/jasonckok) and React application for the frontend by [Gavin Baker](https://github.com/gavnbaker).
+
+This is an ongoing project.
 
 ## Getting Started
 
@@ -92,3 +94,4 @@ where ``{id}`` is the id corresponding to the movie that you want to delete.
 ## Author
 
 * **Jason Kok** - *Backend* - [github.com/jasonckok](https://github.com/jasonckok)
+* **Gavin Baker** - *Frontend* - [github.com/gavnbaker](https://github.com/gavnbaker)
