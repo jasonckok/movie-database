@@ -19,6 +19,10 @@ const MovieService = {
             .then(
                 (response) => response.data
             );
+    },
+    deleteMovie: (id) => {
+        return axios.delete(`movies/${id}`)
+            .then(() => console.log(`deleted movie ${id}`));
     }
 };
 

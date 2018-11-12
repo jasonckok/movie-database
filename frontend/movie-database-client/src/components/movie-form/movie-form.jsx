@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 
 export default class MovieForm extends React.Component {
     constructor(props){
@@ -14,7 +15,8 @@ export default class MovieForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();        
-        this.props.onMovieFormSubmit(this.state);
+        const movie = _.assign({}, this.state, {year: this.state.year.substr(0, 4)}); 
+        this.props.onMovieFormSubmit(movie);
     }
 
     handleChange(event) {

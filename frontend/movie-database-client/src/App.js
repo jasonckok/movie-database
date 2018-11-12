@@ -16,6 +16,7 @@ class App extends Component {
     
     this.handleMovieForm = this.handleMovieForm.bind(this);
     this.loadMovies = this.loadMovies.bind(this);
+    this.deleteMovie = this.deleteMovie.bind(this);
   }
   
   componentDidMount() {
@@ -48,6 +49,15 @@ class App extends Component {
       );
   }
 
+  deleteMovie(event) {
+    const movieId = event.target.dataset.id;
+    console.log(movieId)
+
+    MovieService.deleteMovie(movieId)
+      .then(() => this.loadMovies())
+      .catch((error) => this.setState({error}));
+  }
+
   render() {    
     const { error, isLoaded, movies } = this.state;
     
@@ -60,7 +70,7 @@ class App extends Component {
       <div className="container">
         <h1 className="jumbotron text-center text-primary">Welcome to Movie Database</h1>
         <section className="row">
-          <MovieTable movies={movies}/>
+          <MovieTable movies={movies} onDelete={this.deleteMovie}/>
           <MovieForm onMovieFormSubmit={this.handleMovieForm}/>
         </section>   
          
