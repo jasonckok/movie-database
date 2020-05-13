@@ -2,8 +2,6 @@
 
 A Spring based Maven application that serves as the backend to provide RESTful web services by [Jason Kok](https://github.com/jasonckok) and React application for the frontend by [Gavin Baker](https://github.com/gavnbaker).
 
-This is an ongoing project.
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Note that there are two branches; ``dev`` and ``master``. The default branch is ``dev``.
